@@ -96,10 +96,9 @@ bindsym $mod+a focus parent
 set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 "
-set $ws4 "4 "
+set $ws4 "4 "
 set $ws5 "5 "
-set $ws6 "6 "
-set $ws8 "8 "
+set $ws6 "6 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -142,16 +141,16 @@ workspace 10 output HDMI-0
 assign [class="XTerm"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Discord"] $ws3
-assign [class="chromium"] $ws4
 assign [class="Nautilus"] $ws5
-assign [class="Gedit"] $ws6
-assign [class="libreoffice-startcenter"] $ws8
-assign [class="libreoffice-writer"] $ws8
-assign [class="libreoffice-calc"] $ws8
-assign [class="libreoffice-impress"] $ws8
-assign [class="libreoffice-draw"] $ws8
-assign [class="libreoffice-math"] $ws8
-assign [class="libreoffice-base"] $ws8
+assign [class="Gedit"] $ws4
+assign [class="Atom"] $ws4
+assign [class="libreoffice-startcenter"] $ws6
+assign [class="libreoffice-writer"] $ws6
+assign [class="libreoffice-calc"] $ws6
+assign [class="libreoffice-impress"] $ws6
+assign [class="libreoffice-draw"] $ws6
+assign [class="libreoffice-math"] $ws6
+assign [class="libreoffice-base"] $ws6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -227,7 +226,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always feh --bg-fill /home/greg/Pictures/Wallpapers/city.jpg
+exec_always feh --bg-fill /home/greg/Data/Pictures/Wallpapers/city.jpg
 
 for_window [class="^.*"] border pixel 0
 
@@ -235,14 +234,13 @@ for_window [class="^.*"] border pixel 0
 exec xterm
 exec firefox
 exec discord
-exec gedit
+exec atom
 exec chromium
 exec nautilus
-exec libreoffice
+# exec libreoffice
 
 bindsym $mod+Shift+e exit
 
 exec_always compton
 
 bindsym $mod+Control+l exec ./.lock.sh
-
