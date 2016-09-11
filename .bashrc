@@ -13,4 +13,4 @@ EDITOR=/usr/bin/nano
 # >>>>>END ADDED BY CNCHI INSTALLER<<<<< #
 [ -r /home/greg/.byobu/prompt ] && . /home/greg/.byobu/prompt   #byobu-prompt#
 export USER="Greg"
-alias git-update="~/.git.sh"
+alias git-update="~/Scripts/.git.sh"
