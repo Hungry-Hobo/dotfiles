@@ -95,10 +95,13 @@ bindsym $mod+a focus parent
 # workspace variables
 set $ws1 "1 "
 set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
+set $ws3 "3 "
+set $ws4 "4 "
 set $ws5 "5 "
-set $ws6 "6 "
+set $ws6 "6 "
+set $ws7 "7 "
+set $ws8 "8 "
+set $ws10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -107,10 +110,10 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace 7
+bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -119,10 +122,10 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # forces workspaces to start on specific monitor
 # even numbered workspaces go on main screen, odd go on secondary screen
@@ -130,27 +133,23 @@ workspace $ws1 output DVI-I-0
 workspace $ws2 output HDMI-0
 workspace $ws3 output DVI-I-0
 workspace $ws4 output HDMI-0
-workspace 5 output DVI-I-0
-workspace 6 output HDMI-0
-workspace 7 output DVI-I-0
-workspace 8 output HDMI-0
+workspace $ws5 output DVI-I-0
+workspace $ws6 output HDMI-0
+workspace $ws7 output DVI-I-0
+workspace $ws8 output HDMI-0
 workspace 9 output DVI-I-0
-workspace 10 output HDMI-0
+workspace $ws10 output HDMI-0
 
 # set programs to specific workspaces
 assign [class="XTerm"] $ws1
 assign [class="Firefox"] $ws2
-assign [class="Discord"] $ws3
+assign [class="discord"] $ws3
+assign [class="chromium"] $ws4
+assign [class="google-chrome"] $ws4
 assign [class="Nautilus"] $ws5
-assign [class="Gedit"] $ws4
-assign [class="Atom"] $ws4
-assign [class="libreoffice-startcenter"] $ws6
-assign [class="libreoffice-writer"] $ws6
-assign [class="libreoffice-calc"] $ws6
-assign [class="libreoffice-impress"] $ws6
-assign [class="libreoffice-draw"] $ws6
-assign [class="libreoffice-math"] $ws6
-assign [class="libreoffice-base"] $ws6
+assign [class="Atom"] $ws6
+assign [class="Spotify"] $ws7
+assign [class="Steam"] $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -226,18 +225,17 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always feh --bg-fill /home/greg/Data/Pictures/Wallpapers/city.jpg
+exec_always feh --bg-fill /home/greg/Pictures/Wallpapers/city.jpg
 
 for_window [class="^.*"] border pixel 0
 
 # opening programs
 exec xterm
 exec firefox
-exec discord
+exec discord-canary
 exec atom
-exec chromium
 exec nautilus
-# exec libreoffice
+exec steam
 
 bindsym $mod+Shift+e exit
 
