@@ -71,7 +71,7 @@ set $ws3 "3 "
 set $ws4 "4 "
 set $ws5 "5 "
 set $ws6 "6 "
-set $ws7 "7 "
+set $ws7 "7 "
 set $ws8 "8 "
 set $ws10 "10 "
 set $ws12 "12 "
@@ -124,7 +124,7 @@ assign [class="Chromium"] $ws4
 assign [class="google-chrome"] $ws4
 assign [class="Nautilus"] $ws5
 assign [class="Atom"] $ws6
-assign [class="Thunderbird"] $ws7
+for_window [class="Spotify"] move window to workspace $ws7
 assign [class="Steam"] $ws8
 assign [class="Vmplayer"] $ws12
 
@@ -135,7 +135,6 @@ bindsym $mod+Shift+r restart
 
 # resize window
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
@@ -160,10 +159,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # visual customization
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #666666
+set $bg-color 	         #282828
+set $inactive-bg-color   #282828
+set $text-color          #ebdbb2
+set $inactive-text-color #8D836A
 set $urgent-bg-color     #cc241d
 set $urgent-text-color   #cc241d
 
@@ -204,7 +203,7 @@ exec discord-canary
 exec chromium
 exec atom
 exec nautilus
-exec thunderbird
+exec spotify
 exec steam
 exec vmplayer
 
