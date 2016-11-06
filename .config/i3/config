@@ -167,16 +167,18 @@ set $urgent-bg-color     #cc241d
 set $urgent-text-color   #cc241d
 
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        tray_output none
-        colors {
-		background $bg-color
-	    separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $bg-color          $bg-color          $urgent-text-color
-		}
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    tray_output none
+
+    colors {
+		        background $bg-color
+	          separator #757575
+
+		        #                  # border            # background        # text
+		        focused_workspace  $bg-color           $bg-color           $text-color
+		        inactive_workspace $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+		        urgent_workspace   $bg-color           $bg-color           $urgent-text-color
+		      }
 }
 
 # gaps configuration
@@ -196,16 +198,16 @@ exec_always feh --bg-fill /home/greg/Pictures/Wallpapers/mountains.jpg
 # Gets rid of window border
 for_window [class="^.*"] border pixel 0
 
-# opening programs
-exec xterm
-exec firefox
-exec discord-canary
-exec chromium
-exec atom
-exec nautilus
-exec spotify
-exec steam
-exec vmplayer
+# opening programs on startup
+exec --no-startup-id xterm
+exec --no-startup-id firefox
+exec --no-startup-id discord-canary
+exec --no-startup-id chromium
+exec --no-startup-id nautilus
+exec --no-startup-id atom
+exec --no-startup-id spotify
+exec --no-startup-id steam
+exec --no-startup-id vmplayer
 
 # Exit
 bindsym $mod+Shift+e exit
