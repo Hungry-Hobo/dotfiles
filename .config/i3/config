@@ -75,6 +75,7 @@ set $ws7 "7 "
 set $ws8 "8 "
 set $ws10 "10 "
 set $ws12 "12 "
+set $ws14 "14 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -88,6 +89,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+F2 workspace $ws12
+bindsym $mod+F4 workspace $ws14
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -101,6 +103,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+F2 move container to workspace $ws12
+bindsym $mod+Shift+F4 move container to workspace $ws14
 
 # forces workspaces to start on specific monitor
 # even numbered workspaces go on main screen, odd go on secondary screen
@@ -115,18 +118,21 @@ workspace $ws8 output HDMI-0
 workspace 9 output DVI-I-0
 workspace $ws10 output HDMI-0
 workspace $ws12 output HDMI-0
+workspace $ws14 output HDMI-0
 
 # set programs to specific workspaces
-assign [class="XTerm"] $ws1
+assign [class="UXTerm"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="discord"] $ws3
 assign [class="Chromium"] $ws4
 assign [class="google-chrome"] $ws4
 assign [class="Nautilus"] $ws5
 assign [class="Atom"] $ws6
+assign [class="Emacs"] $ws6
 for_window [class="Spotify"] move window to workspace $ws7
 assign [class="Steam"] $ws8
 assign [class="Vmplayer"] $ws12
+assign [class="Vlc"] $ws14
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -160,10 +166,8 @@ bindsym $mod+r mode "resize"
 
 # visual customization
 set $bg-color 	         #282828
-set $inactive-bg-color   #282828
 set $text-color          #ebdbb2
 set $inactive-text-color #8D836A
-set $urgent-bg-color     #cc241d
 set $urgent-text-color   #cc241d
 
 bar {
@@ -191,14 +195,18 @@ bindsym --release $mod+x exec --no-startup-id import /home/greg/Pictures/Screens
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -5%
 
+# Additional keyboard controls
+bindsym $mod+p exec pactl set-sink-volume 2 +5%
+bindsym $mod+o exec pactl set-sink-volume 2 -5%
+
 # Wallpaper
-exec_always feh --bg-fill /home/greg/Pictures/Wallpapers/mountains.jpg
+exec_always feh --bg-tile /home/greg/Pictures/Wallpapers/pattern2.png
 
 # Gets rid of window border
 for_window [class="^.*"] border pixel 0
 
 # opening programs on startup
-exec --no-startup-id xterm
+exec --no-startup-id uxterm
 exec --no-startup-id firefox
 exec --no-startup-id discord-canary
 exec --no-startup-id chromium
