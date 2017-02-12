@@ -73,9 +73,9 @@ set $ws5 "5 "
 set $ws6 "6 "
 set $ws7 "7 "
 set $ws8 "8 "
-set $ws10 "10 "
-set $ws12 "12 "
-set $ws14 "14 "
+set $ws10 "10"
+set $ws12 "12"
+set $ws14 "14"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -200,7 +200,7 @@ bindsym $mod+p exec pactl set-sink-volume 2 +5%
 bindsym $mod+o exec pactl set-sink-volume 2 -5%
 
 # Wallpaper
-exec_always feh --bg-tile /home/greg/Pictures/Wallpapers/pattern2.png
+exec_always feh --bg-tile /home/greg/Pictures/Wallpapers/stars.png
 
 # Gets rid of window border
 for_window [class="^.*"] border pixel 0
@@ -208,13 +208,12 @@ for_window [class="^.*"] border pixel 0
 # opening programs on startup
 exec --no-startup-id uxterm
 exec --no-startup-id firefox
-exec --no-startup-id discord-canary
+exec --no-startup-id ~/Applications/Discord/Discord
 exec --no-startup-id chromium
 exec --no-startup-id nautilus
 exec --no-startup-id atom
 exec --no-startup-id spotify
-exec --no-startup-id steam
-exec --no-startup-id vmplayer
+exec --no-startup-id steam-native
 
 # Exit
 bindsym $mod+Shift+e exit
